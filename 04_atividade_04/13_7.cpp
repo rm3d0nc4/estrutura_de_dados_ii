@@ -5,6 +5,7 @@ using namespace std;
 
 int igual(Arvore A, Arvore B) {
     if(A == B) return 1;
+    if(A != B && (A == NULL || B == NULL)) return 0;
 
     if(A->item != B->item) return 0;
     int esq = igual(A->esquerda, B->esquerda);
