@@ -4,13 +4,13 @@
 using namespace std;
 
 int igual(Arvore A, Arvore B) {
-    if(A == B) return 1;
-    if(A != B && (A == NULL || B == NULL)) return 0;
+    if(A == B) return 1; // Validar se os nós são nulos
+    if(A != B && (A == NULL || B == NULL)) return 0; // Validar se pelo menos um dos nós é nulo
 
-    if(A->item != B->item) return 0;
-    int esq = igual(A->esquerda, B->esquerda);
-    int dir = igual(A->direita, B->direita);
-    if(esq + dir == 2) return 1;
+    if(A->item != B->item) return 0; // Verificar se os valores dos itens são diferentes
+    int esq = igual(A->esquerda, B->esquerda); // Verificar igualdade das esquerdas
+    int dir = igual(A->direita, B->direita); // Verificar igualdade das direitas
+    if(esq + dir == 2) return 1; //Validar igualdades
     return 0;
 
 }
